@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FilmLibrary.Entities;
+﻿using FilmLibrary.Entities;
 using FluentNHibernate.Mapping;
 
 namespace FilmLibrary.Mapping
@@ -14,9 +11,9 @@ namespace FilmLibrary.Mapping
             this.Table("Actors");
 
 
-            this.Id(x => x.ID);
-            this.Map(x => x.Name, "actor");
-            this.References(x => x.Country_Id);
+            this.Id(x => x.Id);
+            this.Map(x => x.Name);
+            this.References(x => x.Country);
             this.HasMany(x => x.Movies);
         }
     }

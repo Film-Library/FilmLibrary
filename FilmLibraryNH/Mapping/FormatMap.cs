@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FilmLibrary.Entities;
+﻿using FilmLibrary.Entities;
 using FluentNHibernate.Mapping;
 
 namespace FilmLibrary.Mapping
@@ -12,8 +9,8 @@ namespace FilmLibrary.Mapping
         {
             this.Table("Media_formats");
 
-            this.Id(x => x.ID);
-            this.Map(x => x.Name, "genre");
+            this.Id(x => x.Id);
+            this.Map(x => x.Name);
             this.HasMany(x => x.Movies);
         }
     }
