@@ -7,7 +7,9 @@
     {
         public QualityMap()
         {
-            this.Table("FilmLabDB.Qualities");
+            this.Schema("FilmLabDB");
+
+            this.Table("Qualities");
 
             this.Id(x => x.Id);
 

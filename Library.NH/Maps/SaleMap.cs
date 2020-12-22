@@ -7,7 +7,9 @@
     {
         public SaleMap()
         {
-            this.Table("FilmLabDB.Sales");
+            this.Schema("FilmLabDB");
+
+            this.Table("Sales");
 
             this.Id(x => x.Id);
 

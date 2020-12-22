@@ -6,7 +6,9 @@
     {
         public DirectorMap()
         {
-            this.Table("FilmLabDB.Directors");
+            this.Schema("FilmLabDB");
+
+            this.Table("Directors");
 
             this.Id(x => x.Id);
 

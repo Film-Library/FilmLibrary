@@ -7,7 +7,9 @@
     {
         public MediaFormatMap()
         {
-            this.Table("FilmLabDB.MediaFormats");
+            this.Schema("FilmLabDB");
+
+            this.Table("MediaFormats");
 
             this.Id(x => x.Id);
 

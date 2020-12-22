@@ -7,7 +7,9 @@
     {
         public GenreMap()
         {
-            this.Table("FilmLabDB.Genres");
+            this.Schema("FilmLabDB");
+
+            this.Table("Genres");
 
             this.Id(x => x.Id);
 

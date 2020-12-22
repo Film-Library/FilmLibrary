@@ -7,7 +7,9 @@
     {
         public CountrieMap()
         {
-            this.Table("FilmLabDB.Countries");
+            this.Schema("FilmLabDB");
+
+            this.Table("Countries");
 
             this.Id(x => x.Id);
 
