@@ -14,5 +14,13 @@ namespace Movies.Domain
 
         public override string ToString() => Name;
 
+        [Obsolete("Конструктор только для ORM")]
+        protected Director() { }
+
+        public Director(string fullName/*lastName, string firstName, string middleName*/)
+        {
+            //this.Name = new Name(firstName, lastName, middleName);
+            this.Name = fullName;
+        }
     }
 }

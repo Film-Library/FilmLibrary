@@ -4,30 +4,42 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using Movies.Domain;
+
     using NHibernate;
+
+    using Movies.Domain;
+    using Movies.NH.Repositories;
+    using Movies.Services;
 
     class App
     {
-        private readonly ISessionFactory sessionFactory;
+       private readonly IDirectorService directorService;
 
-        public App(ISessionFactory sessionFactory)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="App"/> class.
+        /// </summary>
+        /// <param name="directorService"> </param>
+        public App(IDirectorService directorService)
         {
-            this.sessionFactory = sessionFactory ?? throw new ArgumentNullException(nameof(sessionFactory));
+            this.directorService = directorService ?? throw new ArgumentNullException(nameof(directorService));
         }
 
+        /// <summary>
+        /// Метод запуска приложения.
+        /// </summary>
+        /// <returns> Успешно завершённая задача. </returns>
         public async Task Run()
         {
             Console.OutputEncoding = Encoding.UTF8;
 
-            using (var session = this.sessionFactory.OpenSession())
+            var studentId = 1;
+
+            var teachers = this.directorService.GetAll();
+            foreach (Director item in teachers)
             {
-                var books = session.Query<Movie>().ToList();
-                foreach (var book in books)
-                {
-                    Console.WriteLine(book);
-                }
+                Console.WriteLine(item.ToString());
             }
+
             await Task.CompletedTask;
         }
     }

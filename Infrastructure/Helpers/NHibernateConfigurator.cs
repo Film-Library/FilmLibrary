@@ -7,9 +7,9 @@
 
     public static class NHibernateConfigurator
     {
-        public static string DataSourceLocation = @"DESKTOP-9RIQ0RR\SQLEXPRESS";
+        public static string DataSourceLocation = @"Data Source=DESKTOP-V49F727\SQLEXPRESS";
 
-        private static string GetConnectionString() => @"Data Source=DESKTOP-V49F727\SQLEXPRESS;Initial Catalog = FilmLabDB; Integrated Security = True";
+        private static string GetConnectionString() => @"Data Source=DESKTOP-V49F727\SQLEXPRESS;Initial Catalog=FilmLabDB;Integrated Security=True";
 
         private static FluentConfiguration config;
 

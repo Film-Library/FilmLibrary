@@ -20,6 +20,7 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\Library.Domain\Movies.Domain.csproj" />
     <ProjectReference Include="..\Library.NH\Movies.NH.csproj" />
+    <ProjectReference Include="..\Movies.Services\Movies.Services.csproj" />
   </ItemGroup>
 
 </Project>
