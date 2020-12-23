@@ -9,6 +9,8 @@
 
         List<Director> GetAll();
 
+        List<Movie> GetAllMoviesByDirectorId(int id);
+
         //List<Director> GetAll();
 
         //List<Movie> GetMoviesByDirectorId(int id);

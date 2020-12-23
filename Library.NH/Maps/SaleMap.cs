@@ -13,7 +13,7 @@
 
             this.Id(x => x.Id);
 
-            this.Map(x => x.IdMovie).Column("movie_id");
+            //this.Map(x => x.IdMovie).Column("movie_id");
 
             this.Map(x => x.Price).Column("price");
 

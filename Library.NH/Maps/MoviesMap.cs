@@ -19,7 +19,7 @@
 
             this.Map(x => x.Description);
 
-            this.References(x => x.Director).Column("director_id");
+            this.References(x => x.Director, "director_id");/*.Column("director_id")*/
 
             this.References(x => x.Genre).Column("genre_id");
 

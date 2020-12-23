@@ -32,13 +32,15 @@
         {
             Console.OutputEncoding = Encoding.UTF8;
 
-            var studentId = 1;
+            var directorId = 1;
 
-            var teachers = this.directorService.GetAll();
-            foreach (Director item in teachers)
+            var movies = this.directorService.GetAllMoviesByDirectorId(directorId);
+            foreach (var item in movies)
             {
-                Console.WriteLine(item.ToString());
+                Console.WriteLine(item);
             }
+
+           
 
             await Task.CompletedTask;
         }

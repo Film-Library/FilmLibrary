@@ -9,8 +9,6 @@
     {
         IQueryable<Director> Filter(Expression<Func<Director, bool>> filter);
 
-        //Director Get(int id);
-
         IQueryable<Director> GetAll();
 
         bool TryGet(int id, out Director director);
