@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Movies.Domain;
-
-namespace Movies.Domain
+﻿namespace Movies.Domain
 {
-    public class Qualitie
-    {
-        public Qualitie() { }
+    using System.Collections.Generic;
 
-        public Qualitie(string name)
+    public class Quality
+    {
+        public Quality() { }
+
+        public Quality(string name)
         {
             this.Title = name;
         }

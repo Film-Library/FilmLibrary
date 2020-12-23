@@ -23,13 +23,11 @@
 
             this.References(x => x.Countrie).Column("country_id");
 
-            this.References(x => x.Qualitie).Column("quality_id");
+            this.References(x => x.Quality).Column("quality_id");
 
-            this.References(x => x.Actor).Column("actor_id").Cascade.SaveUpdate();
+            this.References(x => x.Actor, "actor_id");
 
             this.References(x => x.MediaFormat).Column("format_id");
-
-            //this.References(x => x.Sale).Column("Id");
         }
     }
 }

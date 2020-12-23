@@ -3,20 +3,22 @@
     using FluentNHibernate.Mapping;
     using Movies.Domain;
 
-    public class CountrieMap : ClassMap<Countrie>
+    public class CountryMap : ClassMap<Countrie>
     {
-        public CountrieMap()
+        /// <summary>
+        /// Инициализирует новый экземпляр класса <see cref="CountryMap"/>.
+        /// </summary>
+        public CountryMap()
         {
             this.Table("Countries");
 
             this.Id(x => x.Id);
 
-            this.Map(x => x.Name).Column("country");
+            this.Map(x => x.Name, "country");
 
             this.HasMany(x => x.Movies);
 
             this.HasMany(x => x.Actors);
-
         }
     }
 }

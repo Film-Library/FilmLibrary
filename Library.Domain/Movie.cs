@@ -1,6 +1,5 @@
 ﻿namespace Movies.Domain
 {
-    using Infrastructure.Extensions;
     public class Movie
     {
         public Movie() { }
@@ -17,7 +16,6 @@
             this.Countrie = country;
         }
 
-
         public virtual int Id { get; protected set; }
 
         public virtual string Name { get; protected set; }
@@ -30,7 +28,7 @@
 
         public virtual Countrie Countrie { get; protected set; }
 
-        public virtual Qualitie Qualitie { get; protected set; }
+        public virtual Quality Quality { get; protected set; }
 
         public virtual Actor Actor { get; protected set; }
 
@@ -40,6 +38,6 @@
 
         public virtual string Description { get; protected set; }
 
-        public override string ToString() => $"Название фильма: {this.Name}\n\tГод выхода на экраны: {this.Year}\n\tРежисёр: {this.Director}\n\tЖанр: {this.Genre}\n\tСтрана: {this.Countrie}\n\tКачество: {this.Qualitie}\n\tАктеры: {this.Actor}\n\tФормат: {this.MediaFormat}\n\tОписание: {this.Description}\n\n";
+        public override string ToString() => $"Название фильма: {this.Name}\n\tГод выхода на экраны: {this.Year}\n\tРежисёр: {this.Director}\n\tЖанр: {this.Genre}\n\tСтрана: {this.Countrie}\n\tКачество: {this.Quality}\n\tАктеры: {this.Actor}\n\tФормат: {this.MediaFormat}\n\tОписание: {this.Description}\n\n";
     }
 }

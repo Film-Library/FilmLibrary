@@ -3,7 +3,7 @@
     using FluentNHibernate.Mapping;
     using Movies.Domain;
 
-    public class QualityMap : ClassMap<Qualitie>
+    public class QualityMap : ClassMap<Quality>
     {
         public QualityMap()
         {

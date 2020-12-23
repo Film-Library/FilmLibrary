@@ -1,11 +1,16 @@
 ﻿namespace Movie.NH.Tests
 {
-    using Movies.Domain;
+    using FluentNHibernate.Testing;
     using Infrastructure.Helpers;
+    using Movies.Domain;
+    using Movies.NH.Maps;
     using NHibernate;
     using NUnit.Framework;
-    using FluentNHibernate.Testing;
-    using Movies.NH.Maps;
+
+    /// <summary>
+    /// Модульные тесты для класса <see cref="MediaFormatMap"/>.
+    /// </summary>
+    [TestFixture]
     public class MediaFormatMappingTest
     {
         private ISession session;
@@ -13,15 +18,16 @@
         [SetUp]
         public void Setup()
         {
-            this.session = NHibernateTestHelper.GetSession(true, typeof(ActorMap), typeof(CountrieMap), typeof(MovieMap), typeof(DirectorMap), typeof(GenreMap), typeof(QualityMap), typeof(MediaFormatMap));
+            this.session = NHibernateTestHelper.GetSession(true, typeof(MediaFormatMap).Assembly);
         }
 
         [Test]
-        public void ActorMapping_NoNullFields_Success()
+        public void MediaFormatMapping_NoNullFields_Success()
         {
+            // act & assert
             new PersistenceSpecification<MediaFormat>(this.session)
                 .CheckProperty(x => x.Name, "DVD")
-                //фильмы
+                // TODO: Фильмы
                 .VerifyTheMappings();
         }
     }

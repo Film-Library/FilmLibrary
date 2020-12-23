@@ -6,6 +6,11 @@
     using NUnit.Framework;
     using FluentNHibernate.Testing;
     using Movies.NH.Maps;
+
+    /// <summary>
+    /// Модульные тесты для класса <see cref="GenreMap"/>.
+    /// </summary>
+    [TestFixture]
     public class GenreMappingTest
     {
         private ISession session;
@@ -13,15 +18,16 @@
         [SetUp]
         public void Setup()
         {
-            this.session = NHibernateTestHelper.GetSession(true, typeof(ActorMap), typeof(CountrieMap), typeof(MovieMap), typeof(DirectorMap), typeof(GenreMap), typeof(QualityMap), typeof(MediaFormatMap));
+            this.session = NHibernateTestHelper.GetSession(true, typeof(GenreMap).Assembly);
         }
 
         [Test]
-        public void ActorMapping_NoNullFields_Success()
+        public void GenreMapping_NoNullFields_Success()
         {
+            // act & arrange
             new PersistenceSpecification<Genre>(this.session)
                 .CheckProperty(x => x.Title, "Ужасы")
-                //фильмы
+                // TODO: Фильмы
                 .VerifyTheMappings();
         }
     }

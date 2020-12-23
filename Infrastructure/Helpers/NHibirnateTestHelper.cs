@@ -1,15 +1,14 @@
-﻿using System.Reflection;
-
-namespace Infrastructure.Helpers
+﻿namespace Infrastructure.Helpers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
     using FluentNHibernate.Cfg;
     using FluentNHibernate.Cfg.Db;
     using NHibernate;
     using NHibernate.Cfg;
     using NHibernate.Tool.hbm2ddl;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
 
     public static class NHibernateTestHelper
     {
@@ -65,7 +64,7 @@ namespace Infrastructure.Helpers
         {
             var session = configuration.BuildSessionFactory().OpenSession();
             new SchemaExport(savedConfiguration ?? configuration.BuildConfiguration())
-                .Execute(true, true, false, session.Connection, Console.Out);
+                .Execute(true, true, false, session.Connection, null);
             return session;
         }
     }
